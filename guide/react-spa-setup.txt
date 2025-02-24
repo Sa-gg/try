@@ -1,0 +1,114 @@
+Install Node JS 
+React Developer Tools Web Extension - to see components props and state
+
+npm create vite@latest projectname
+cd projectname
+code .
+
+vite.config.js change port for front-end
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+  }
+})
+
+npm install
+npm run dev
+
+(remove or delete)
+rm -rf node_modules package-lock.json
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json 
+
+delete app.css for tailwind
+
+ES7 + Reac/Redux/React-Native Snippets
+rafce
+
+Tailwind with VITE
+https://tailwindcss.com/docs/installation/using-vite    
+
+npm i react-icons
+npm i react-router-dom
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
+
+const router  = createBrowserRouter(
+  createRoutesFromElements(
+  <Route path='/' element={<MainLayout/>}>
+    <Route index element={<HomePage/>} />
+  </Route>
+  )
+);
+const App = () => {
+  return <RouterProvider router={router} />
+}
+
+import { Outlet  } from 'react-router-dom'
+
+import { Link } from 'react-router-dom'
+change a to Link, href to to
+
+import { NavLink } from 'react-router-dom'
+
+json-server : lets you create a mock-api
+npm i -D json-server
+
+"server": "json-server --watch src/jobs.json --port 8000"
+in package.json scriptss
+npm run server
+
+const JobListings = ( {isHome = false}) => {
+  const [jobs, setJobs] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await fetch('http://localhost:8000/jobs')
+        const jobs = await res.json()
+        setJobs(jobs)
+      } catch (error) {
+        console.error('Error Fetching Data', error)
+      } finally {
+        setLoading(false)
+      }
+
+    }
+
+    fetchJobs();
+  }, [])
+
+
+{loading ? <p>Loading...</p> : (
+            <>
+            { jobs.map((job) => ( 
+              <JobListing key={job.id} job={job}/>
+            ))}
+            </>
+          )}
+
+
+npm i react-spinners
+
+const JobListings = ( {isHome = false}) => {
+  const [jobs, setJobs] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const apiUrl = isHome ? 'http://localhost:8000/jobs?_limit=3' : 'http://localhost:8000/jobs'
+      try {
+        const res = await fetch(apiUrl)
+        const jobs = await res.json()
+        setJobs(jobs)
+      } catch (error) {
+        console.error('Error Fetching Data', error)
+      } finally {
+        setLoading(false)
+      }
+
+    }
+
+    fetchJobs();
+  }, [])

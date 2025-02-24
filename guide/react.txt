@@ -1,0 +1,46 @@
+React Router for Multi Page Application
+Backend and API - JSON Server Library as as MOCK Rest API
+
+React 19 - They add compiler which will convert react code to javascript which will double the performance,
+which will replace virtual dom and makes takes faster and automate tedious task
+
+React is a UI Library, it operates like a framework and is direct comptetition to one, often used with library such as React Router to create a full fledge solution
+Angular is a framework, includes a router, htp client, state management library
+
+Ajax - make request to the server without having to reload the page
+
+React use Virtual DOM
+
+VUE and SVELT are easier compared to react
+
+Components
+Functional Components
+It can take props and can hold state or data
+
+State 
+- represents the data that a component manages internally
+- form input data, fetched data, UI-related data like if a modal is open/close
+- to define state you can use a HOOK
+- useState() hook which is a built-in react hook
+- global state, which relates to the app as a whole and not a single component
+- third party management system like REDUX
+
+Hooks
+- Allows us to use state and other React featues within functional components
+
+JSX javascript Syntax Extension
+Class -> ClassName
+
+SPA, SSR, SSG
+Single Page App - Loads a single HTML file and Javascript loads the entire UI including routes. 
+it can have some issues when it comes to inital page load time and seo but the solution is:
+Server-Side Rendered - NEXT.JS and REMIX, they still use react but kind of a wrapper instead of everything in bundled in a javascript, the initial page is load is rendered in a server. needs a server
+Static Site Generation - GATSBY and ASTRO frameworks, Server generates static HTML files at build time
+
+Vite
+- build on ESBuild which is a very fast JS bundler
+- front-end toolkit that can be used for all kinds of JS Projects including React.
+
+
+
+

@@ -44,3 +44,6 @@ Vite
 
 
 
+Context Api, Redux or other state manager for CRUD
+
+Django, Rest Api with Express, Laravel

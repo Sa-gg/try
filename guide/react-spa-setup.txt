@@ -112,3 +112,13 @@ const JobListings = ( {isHome = false}) => {
 
     fetchJobs();
   }, [])
+
+
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import { toast } from 'react-toastify';
+
+
+npm run build
+npm run preview
